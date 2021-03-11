@@ -16,9 +16,23 @@ var coupons = [
 ];
 
 var finded = false;
+var price = 0;
+
+var ingredLis = document.getElementsByTagName("li");
+
+for (var i = 0; i < ingredLis.length; i++) {
+
+  var listItem = ingredLis[i];
+
+  listItem.addEventListener('click',function(){
+
+    this.children[2].checked = !this.children[2].checked;
+    console.log(this.children[2].checked);
+  })
+}
 
 calculateBtn.addEventListener('click', function() {
-  var price = 7.50;
+  price = 7.50;
   var nameBurg = document.getElementById("name-burg").value;
 
   if (nameBurg.length < 1) {
